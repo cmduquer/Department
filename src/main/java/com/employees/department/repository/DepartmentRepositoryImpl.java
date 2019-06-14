@@ -13,7 +13,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
 
 	@Override
 	public Department add(Department department) {
-		department.setId((long) (departments.size()+1));
+		department.setId("" + (departments.size()+1));
 		departments.add(department);
 		return department;
 	}

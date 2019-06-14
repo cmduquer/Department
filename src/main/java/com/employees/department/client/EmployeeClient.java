@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.employees.department.model.Employee;
 
-@FeignClient(value = "employee-service")
+@FeignClient(name = "employee")
 public interface EmployeeClient {
 	
-	@GetMapping("/employees/department/{departmentId}")
-	List<Employee> findByDepartment(@PathVariable("departmentId") Long departmentId);
+	@GetMapping("/department/{departmentId}")
+	List<Employee> findByDepartment(@PathVariable("departmentId") String departmentId);
 }
